@@ -1,4 +1,4 @@
-import './App.css';
+import '../App.css';
  
 let list=[];
 let contador=1; 
@@ -12,28 +12,26 @@ function entrar(){
   list.push("\n");
   window.localStorage.setItem("listado",list);
   contador++;
-  if ((id1==="Admin" && id2==="Admin") || (id1==="root" && id2==="root") ) {
+  if (id1==="Admin" && id2==="Admin") {
     window.location.replace('/AdminH');
   }
-  if(id1==="David" && id2==="Rivera"){
-    window.location.replace('/User');
-  }
+  
 }
 
-function App() {
+function megaAdmin() {
   
   return (
       
         <div className="field"> 
           <div class="container">
             <div class="notification is-link has-text-centered">
-                Este es mi <strong>Login</strong> para exponer
+                Este es mi <strong>Login de Administrador</strong> para exponer
             </div>
           </div>
           <div class="container is-max-desktop">
           <label class="label">Usuario</label>
           <div class="control has-icons-left has-icons-right">
-            <input class="input is-link" type="text" id="id1" placeholder="Ingrese su usuario" ></input>
+            <input class="input is-link" type="text" id="id1" placeholder="Ingrese su usuario" value="Admin"></input>
             <span class="icon is-small is-left">
               <i class="fas fa-user"></i>
             </span>
@@ -41,7 +39,7 @@ function App() {
           </div>
           <label class="label">Contraseña</label>
           <div class="control has-icons-left has-icons-right">
-            <input class="input is-success" type="password" id="id2"  placeholder="Ingrese su contraseña" ></input>
+            <input class="input is-success" type="password" id="id2"  placeholder="Ingrese su contraseña" value="Admin" ></input>
             <span class="icon is-small is-left">
               <i class="fas fa-user"></i>
             </span>
@@ -74,4 +72,4 @@ function App() {
   );
 }
 
-export default App;
+export default megaAdmin;
